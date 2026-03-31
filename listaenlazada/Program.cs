@@ -15,4 +15,10 @@ v3.Sig = v1;
 a.Primero = v3;
 a.Imprime();
 
+Console.WriteLine();
+Locomotora B = new Locomotora();
+B.AgregaIni(5);
+B.AgregaIni(3);
+B.AgregaIni(10);
+B.Imprime();
 
