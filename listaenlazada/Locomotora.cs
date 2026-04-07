@@ -87,5 +87,59 @@ namespace listaenlazada
             }
             return false;
         }
+
+        public int Get(int idx)
+        {
+            Vagon tmp = Primero;
+            int indice = 0;
+            while (tmp != null)
+            {
+                if (indice == idx)
+                {
+                    return tmp.Dato;
+                }
+                indice++;
+                tmp = tmp.Sig;
+            }
+            return int.MinValue;
+        }
+
+        public int Lenght()
+        {
+            Vagon tmp = Primero;
+            int contar = 0;
+            while (tmp != null)
+            {
+                contar++;
+                tmp = tmp.Sig;
+            }
+            return contar;
+        }
+        public void  MezclaFinal(Locomotora ListFin)
+        {
+            int cant = ListFin.Lenght();
+            for (int i = 0; i <= cant; i++) 
+            {
+              this.AgregaFin(ListFin.Get(i));
+            }
+           
+        }
+        public void MezclaFinal2 (Locomotora ListFin)
+        {
+            Vagon actual = ListFin.Primero;
+           
+            if (this.Primero == null)
+            {
+                this.Primero = actual;
+            } else
+            {
+                Vagon tmp = Primero;
+                    while (tmp.Sig != null)
+                {
+                    tmp = tmp.Sig;
+                }
+                    tmp.Sig = actual;
+            }
+        }
     }
 }

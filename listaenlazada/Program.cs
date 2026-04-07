@@ -22,6 +22,24 @@ B.AgregaIni(3);
 B.AgregaFin(20);
 B.EliminarSegundo();
 B.Imprime();
-Console.WriteLine("Ingrese valor a buscar");
-int vbus = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(B.BuscarValor(vbus)? "Econtrado" : "no esta");
+
+Console.WriteLine(B.Get(1));
+Console.WriteLine($"hay {B.Lenght()} elementos" );
+
+//Console.WriteLine("Ingrese valor a buscar");
+//int vbus = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine(B.BuscarValor(vbus)? "Econtrado" : "no esta");
+
+Locomotora a = new Locomotora();
+a.AgregaFin(1);
+a.AgregaFin(3);
+a.AgregaFin(5);
+
+Locomotora b = new Locomotora();
+b.AgregaFin(2);
+b.AgregaFin(4);
+b.AgregaFin(6);
+
+a.Imprime(); //1,3, 5
+a.MezclaFinal(b);
+a.Imprime();
