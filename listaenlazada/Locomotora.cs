@@ -73,5 +73,19 @@ namespace listaenlazada
                 tmp = tmp.Sig;
             }
         }
+
+        public bool BuscarValor(int valorBuscar)
+        {
+            Vagon tmp = Primero;
+            while (tmp != null)
+            {
+                if (tmp.Dato == valorBuscar)
+                {
+                    return true;
+                }
+                tmp = tmp.Sig;
+            }
+            return false;
+        }
     }
 }
