@@ -27,6 +27,43 @@ namespace listaenlazada
 
         }
 
+        public void AgregaFin(int valor)
+        {
+            Vagon nuevo = new Vagon(valor);
+            if (this.Primero == null)
+            {
+                this.Primero = nuevo;
+            }
+            else if (this.Primero.Sig == null)
+            {
+                this.Primero.Sig = nuevo;
+            }
+            else
+            {
+                Vagon ultimo = Primero;
+                while (ultimo.Sig != null)
+                {
+                    ultimo = ultimo.Sig;
+                } 
+                ultimo.Sig = nuevo;
+            }  
+        }
+        public void EliminarSegundo()
+        {
+            Vagon actual = Primero;
+
+            if (actual == null || actual.Sig == null)
+            {
+                Console.WriteLine("Los vagones on insuficientes");
+                return;
+            }
+            else
+            {
+                Vagon conservar = Primero.Sig.Sig;
+                actual.Sig = conservar;
+            }
+            Primero = actual;
+        }
         public void Imprime()
         {
             Vagon tmp = Primero;
